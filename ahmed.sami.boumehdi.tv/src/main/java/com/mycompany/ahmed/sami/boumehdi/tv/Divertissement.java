@@ -33,4 +33,23 @@ public class Divertissement extends Programme {
     {
         return heure;
     }
+    public static Divertissement creationObjet(String element)
+    {
+        logger.info("Entree dans la methode static creationObjet(String elt)");
+        int idebut;
+        Divertissement tmp;
+        logger.info("Debut du decoupage");
+        StringTokenizer stk = new StringTokenizer(element, ",");
+        String sType = stk.nextToken().toUpperCase(); //type
+        String stDebut = stk.nextToken().trim();//début
+        logger.debug("Tentative de conversion de l'heure de debut");
+            idebut = Integer.parseInt(stDebut);
+        String stTitre = stk.nextToken().trim(); //titre
+        String stAnimateur = stk.nextToken().trim(); //animateur
+        logger.info("Fin du decoupage");
+        tmp = new Divertissement(idebut,stTitre);
+        tmp.setAnimateur(stAnimateur);
+        logger.info("Sortie de la methode creationObjet. L'objet {} est cree.",element);
+        return tmp;
+    }
 }
