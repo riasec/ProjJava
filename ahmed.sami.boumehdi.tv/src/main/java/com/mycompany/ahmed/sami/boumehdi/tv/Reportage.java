@@ -31,6 +31,30 @@ public class Reportage extends Programme {
     {
         this.theme=theme;
     }
-    public int getDebut(){return heure;}
-    
+    public int getDebut()
+    {
+        return heure;
+    }
+        public static Reportage creationObjet(String element)
+    {
+        logger.info("On entre dans la methode creationObjet");
+        int idebut, iduree;
+        Reportage tmp;
+        logger.info("Debut du decoupage");
+        StringTokenizer stk = new StringTokenizer(element, ",");
+        String sType = stk.nextToken().toUpperCase(); //type
+        String stDebut = stk.nextToken().trim();//début
+        logger.debug("Tentative de conversion de l'heure de debut");
+            idebut = Integer.parseInt(stDebut);
+        String stDuree = stk.nextToken().trim();//durée
+        logger.debug("Tentative de conversion de la duree");
+            iduree = Integer.parseInt(stDuree);
+        String stTitre = stk.nextToken().trim(); //titre
+        String stTheme = stk.nextToken().trim(); //animateur
+        logger.info("Fin du decoupage");
+        tmp = new Reportage(idebut,iduree,stTitre);
+        tmp.setTheme(stTheme);
+        logger.info("Sortie de la methode creationObjet, le programme {} est cree", element);
+        return tmp;
+    }
 }
