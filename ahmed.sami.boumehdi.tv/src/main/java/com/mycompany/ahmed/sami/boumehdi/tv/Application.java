@@ -36,6 +36,18 @@ public class Application
             logger.trace("Passage dans la boucle d'affichage");
             System.out.println(s);
         }
+        
+        /*
+        Traitement de l'array
+        */
+        
+         for (String progAtester : programmeList) {
+            logger.trace("Passage dans la boucle de traitement des programmes.");
+            StringTokenizer stk = new StringTokenizer(progAtester, ",");
+            String sType = stk.nextToken().toUpperCase(); //type de programme
+            logger.trace("Decoupage du premier mot de la liste.");
+        }
+        
         /********************************************************************
                 AFFICHAGE DU PROGRAMME TV 
         ********************************************************************/ 
