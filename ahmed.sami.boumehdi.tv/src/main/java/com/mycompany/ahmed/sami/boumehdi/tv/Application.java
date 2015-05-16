@@ -11,7 +11,7 @@ public class Application
     {
         logger.info("Lancement de l'application");
         System.out.println( "ProjetTele - Boumehdi Ahmed-Sami - Groupe C" );
-        
+        System.out.println();
         String[] programmeTV  = new String[24];
         
         /*********************************************************************
@@ -29,14 +29,13 @@ public class Application
         /********************************************************************
                             AFFICHAGE DE L'ARRAYLIST A TESTER
         *********************************************************************/
-        
         System.out.println("A tester :");
         for(String s : programmeList)
         {
             logger.trace("Passage dans la boucle d'affichage");
             System.out.println(s);
         }
-        
+        System.out.println();
         /*
         Traitement de l'array
         */
