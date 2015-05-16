@@ -23,7 +23,6 @@ public class Fiction extends Programme {
     public Fiction(int heure, int duree, String nom){
        super(heure,duree,nom);
        this.type="Fiction";
-
     }
 
      public int getAnnee() {
