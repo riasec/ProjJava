@@ -65,6 +65,24 @@ public class Application
                 } 
                 }
             }
+            if("REPORTAGE".equals(sType))
+            {
+                Reportage tmp = Reportage.creationObjet(progAtester);
+                if(tmp.verif()==true)
+                {
+                    logger.trace("Verification du respect des contraintes de <{}>",progAtester);
+                    if (programmeTV[tmp.getDebut()] != null)
+                    {
+                        System.out.println("Le créneau choisi pour : " + progAtester + " est déjà utilisé.");
+                        logger.trace("La case programmeTV[{}] est deja utilisee. On ne peut pas programmer {}",tmp.getDebut(),progAtester);
+                    }
+                    else 
+                    {
+                        programmeTV[tmp.getDebut()]=progAtester;
+                        logger.trace("Affectation de <{}> dans la case programmeTV[{}]",progAtester,tmp.getDebut());
+                    }
+                }
+            }
         }
         
         /********************************************************************
