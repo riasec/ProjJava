@@ -19,10 +19,9 @@ public class Fiction extends Programme {
     private boolean rediffusion;
     private static final Logger logger = LoggerFactory.getLogger(Fiction.class);
     public Fiction(int heure, int duree, String nom){
+       super(heure,duree,nom);
        this.type="Fiction";
-       this.heure=heure;
-       this.duree=duree;
-       this.nom=nom;
+
     }
 
      public int getAnnee() {
