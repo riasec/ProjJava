@@ -16,7 +16,9 @@ import org.slf4j.LoggerFactory;
 public class Reportage extends Programme {
    
     private String theme;
+    
     private static final Logger logger = LoggerFactory.getLogger(Reportage.class);
+    
     public Reportage(int heure, int duree, String nom)
     {
         super(heure,duree,nom);
