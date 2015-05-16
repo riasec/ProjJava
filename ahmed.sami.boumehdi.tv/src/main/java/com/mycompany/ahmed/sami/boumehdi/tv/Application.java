@@ -9,7 +9,11 @@ public class Application
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
     public static void main( String[] args )
     {
+        logger.info("Lancement de l'application");
         System.out.println( "ProjetTele - Boumehdi Ahmed-Sami - Groupe C" );
+        
+        String[] programmeTV  = new String[24];
+        
         /*********************************************************************
                                 ARRAYLIST A VERIFIER
         *********************************************************************/
@@ -32,5 +36,21 @@ public class Application
             logger.trace("Passage dans la boucle d'affichage");
             System.out.println(s);
         }
+        /********************************************************************
+                AFFICHAGE DU PROGRAMME TV 
+        ********************************************************************/ 
+        
+        System.out.println("Programme télé :");
+       
+        for(int i=0;i<24;i++)
+        {   
+            if (programmeTV[i] != null) {
+                System.out.println(i + "h : " + programmeTV[i]);
+            } else {
+                System.out.println(i + "h ----- Créneau libre");
+            }
+            logger.trace("La valeur de programmeTV[{}] a ete affichee",i);
+        }
+    logger.info("Fin de l'execution de l'application");
     }
 }
