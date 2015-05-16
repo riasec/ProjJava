@@ -10,8 +10,8 @@ package com.mycompany.ahmed.sami.boumehdi.tv;
  * @author Ahmed-Sami
  */
 public class Programme {
-    int heure ;
-    int duree;
-    String nom;
-    String type;
+    protected int heure ;
+    protected int duree;
+    protected String nom;
+    protected String type;
 }
