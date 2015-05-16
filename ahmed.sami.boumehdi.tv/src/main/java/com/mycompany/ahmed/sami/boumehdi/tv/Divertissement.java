@@ -28,10 +28,6 @@ public class Divertissement extends Programme {
     public void setAnimateur(String animateur) {
        this.animateur = animateur;
     }
-    public int getDebut()
-    {
-        return heure;
-    }
     public static Divertissement creationObjet(String element)
     {
         logger.info("Entree dans la methode static creationObjet(String elt)");
