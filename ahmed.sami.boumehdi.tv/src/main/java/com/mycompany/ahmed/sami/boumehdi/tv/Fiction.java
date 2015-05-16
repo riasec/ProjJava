@@ -51,4 +51,38 @@ public class Fiction extends Programme {
      {
          return heure;
      }
+    public static Fiction creationObjet(String element)
+    {
+        logger.info("Entree dans la methode Fiction.creationObjet(String elt)");
+        int idebut, iduree;
+        Fiction tmp;
+        int year;
+        Boolean rediff;
+        logger.info("Debut du decoupage");
+        StringTokenizer stk = new StringTokenizer(element, ",");
+        String sType = stk.nextToken().toUpperCase(); //type
+        String stDebut = stk.nextToken().trim();//début
+        logger.debug("Tentative de conversion de l'heure de debut de la fiction {}", element);
+        idebut = Integer.parseInt(stDebut);
+        String stDuree = stk.nextToken().trim();//durée
+        logger.debug("Tentative de conversion de la duree de la fiction {}", element);
+        iduree = Integer.parseInt(stDuree);
+        String stTitre = stk.nextToken().trim(); //titre
+        String stAnnee = stk.nextToken().trim(); //date
+        logger.debug("Tentative de conversion de l'annee de la fiction {}", element);
+        year=Integer.parseInt(stAnnee);
+        String stRealis = stk.nextToken().trim(); // réalisateur
+        String stRediff = stk.nextToken().trim().toUpperCase(); //rediff
+        logger.info("Fin du decoupage");
+        if("OUI".equals(stRediff))
+        {rediff=true;} 
+        else {rediff=false;}
+
+        tmp = new Fiction(idebut,iduree,stTitre);
+        tmp.setAnnee(year); // convertir s5 en int
+        tmp.setRediffusion(rediff); // convertir s7 en booléen
+        tmp.setRealisateur(stRealis);
+        logger.info("L'objet fiction correspondant au programme {} a ete creee. Sortie de la methode creationObjet.",element);
+        return tmp;
+    }
 }
