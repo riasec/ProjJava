@@ -46,6 +46,25 @@ public class Application
             StringTokenizer stk = new StringTokenizer(progAtester, ",");
             String sType = stk.nextToken().toUpperCase(); //type de programme
             logger.trace("Decoupage du premier mot de la liste.");
+            if("DIVERTISSEMENT".equals(sType))
+            {
+                Divertissement tmp = Divertissement.creationObjet(progAtester);
+                if(tmp.verif()==true)
+                {
+                    logger.trace("Verification du respect des contraintes de <{}>",progAtester);
+                    if (programmeTV[tmp.getDebut()] != null || programmeTV[tmp.getDebut()+1] != null)
+                {
+                    System.out.println("Le créneau choisi pour : " + progAtester + " est déjà utilisé.");
+                    logger.trace("La case programmeTV[{}] ou programmeTV[{}] est deja utilisee. On ne peut pas programmer {}",tmp.getDebut(),tmp.getDebut()+1,progAtester);
+                }
+                else
+                {
+                    programmeTV[tmp.getDebut()]=progAtester;
+                    programmeTV[tmp.getDebut()+1]=progAtester; //car les divertiss. durent forcément 2h
+                    logger.trace("Affectation de <{}> dans programmeTV[{}] et programmeTV[{}]",progAtester,tmp.getDebut(),tmp.getDebut()+1);
+                } 
+                }
+            }
         }
         
         /********************************************************************
