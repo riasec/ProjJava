@@ -83,6 +83,26 @@ public class Application
                     }
                 }
             }
+            if("FICTION".equals(sType)) 
+            {
+                Fiction tmp = Fiction.creationObjet(progAtester);
+                int variableDeCalcul=tmp.getDuree()+tmp.getDebut()-1;
+                if(tmp.verif() ==true)
+                { 
+                    logger.trace("Verification du respect des contraintes de <{}>",progAtester);
+                    for(int i = variableDeCalcul; i>=tmp.getDebut(); i--)
+                    {
+                        if (programmeTV[i] != null)
+                        {
+                            System.out.println("Le créneau choisi pour : " + progAtester + " est déjà utilisé.");
+                            logger.trace("La case programmeTV[{}] est deja utilisee. On ne peut pas programmer {}",i,progAtester);
+                        }
+                        else {programmeTV[i]=progAtester;
+                        logger.trace("Affectation de <{}> dans programmeTV[{}]",progAtester, i);    
+                        }
+                    }
+                }
+            }
         }
         
         /********************************************************************
