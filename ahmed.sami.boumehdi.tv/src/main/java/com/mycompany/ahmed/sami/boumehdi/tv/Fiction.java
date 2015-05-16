@@ -48,10 +48,6 @@ public class Fiction extends Programme {
      {
          return duree;
      }
-     public int getDebut()
-     {
-         return heure;
-     }
     public static Fiction creationObjet(String element)
     {
         logger.info("Entree dans la methode Fiction.creationObjet(String elt)");
