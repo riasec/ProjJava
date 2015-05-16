@@ -14,4 +14,14 @@ public class Programme {
     protected int duree;
     protected String nom;
     protected String type;
+ public Programme(int heure, int duree, String nom)
+ {
+      this.heure=heure;
+      this.duree=duree;
+      this.nom=nom;
+  }
+  public Programme(int heure,String nom){
+      this.heure=heure;
+      this.nom=nom;
+  }
 }
