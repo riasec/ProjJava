@@ -17,11 +17,10 @@ public class Reportage extends Programme {
    
     private String theme;
     private static final Logger logger = LoggerFactory.getLogger(Reportage.class);
-    public Reportage(int heure, int duree, String nom){
+    public Reportage(int heure, int duree, String nom)
+    {
+        super(heure,duree,nom);
         this.type="Reportage";
-        this.heure=heure;
-        this.duree=duree;
-        this.nom=nom;
     }
     public String getTheme()
     {
