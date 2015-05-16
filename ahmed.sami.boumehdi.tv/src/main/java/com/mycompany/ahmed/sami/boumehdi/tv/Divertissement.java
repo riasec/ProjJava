@@ -52,4 +52,19 @@ public class Divertissement extends Programme {
         logger.info("Sortie de la methode creationObjet. L'objet {} est cree.",element);
         return tmp;
     }
+    public Boolean verif(){
+        logger.info("Debut de la verification");
+        Boolean test=false;
+        if(this.heure<18 || this.heure>21) //car dure 2h et doit être programmé entre 18h et 23h
+        {
+            logger.info("Les heures ne sont pas correctes. On renvoie false");
+            System.out.println("Mauvaise heure pour le divertissement : " + this.nom);
+        }
+        else { //on va vérifier si le début et l'heure qui suit sont prises (un divertissement dure 2h)
+            test=true;
+            logger.info("Les heures sont correctes. On renvoie true");
+            } 
+        logger.info("Fin de la verification");
+        return test;
+    }
 }
