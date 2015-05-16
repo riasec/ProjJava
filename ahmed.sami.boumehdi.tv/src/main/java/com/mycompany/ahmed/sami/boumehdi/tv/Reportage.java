@@ -35,7 +35,7 @@ public class Reportage extends Programme {
     {
         return heure;
     }
-        public static Reportage creationObjet(String element)
+    public static Reportage creationObjet(String element)
     {
         logger.info("On entre dans la methode creationObjet");
         int idebut, iduree;
@@ -56,5 +56,37 @@ public class Reportage extends Programme {
         tmp.setTheme(stTheme);
         logger.info("Sortie de la methode creationObjet, le programme {} est cree", element);
         return tmp;
+    }
+    public Boolean verif()
+    {   
+        
+        logger.info("Debut de la verification");
+        Boolean test;  
+        test = false;
+        if (this.duree == 1) //1h obligatoire
+        {
+            if(this.heure>=14 && this.heure<=17) //tranche horaire creuse
+            {   
+                logger.info("Bonne duree et bon creneau horaire. On renvoie <true>");
+                test=true;
+            }
+            else if (this.heure>=0 && this.heure<=5) //tranche horaire creuse
+            {   
+                logger.info("Bonne duree et bon creneau horaire. On renvoie <true>");
+                test=true;
+            }
+            else {
+                logger.info("Bonne duree mais mauvaise heure de debut. On renvoie <false>");
+                System.out.println("Mauvaise heure de début pour le reportage : " + this.nom);
+            }
+        logger.info("Fin de la verification");
+        }
+        else
+        {
+            logger.info("Mauvaise duree. On renvoie <false>");
+            System.out.println("Mauvaise durée pour le reportage : " + this.nom);
+        
+        }
+     return test;
     }
 }
