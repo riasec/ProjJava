@@ -18,9 +18,8 @@ public class Divertissement extends Programme {
     private String animateur;
     private static final Logger logger = LoggerFactory.getLogger(Divertissement.class);
     public Divertissement(int heure, String nom){
-        this.heure=heure;
+        super(heure,nom);
         this.duree=2;
-        this.nom=nom;
         this.type="Divertissement";
     }
     public String getAnimateur() {
