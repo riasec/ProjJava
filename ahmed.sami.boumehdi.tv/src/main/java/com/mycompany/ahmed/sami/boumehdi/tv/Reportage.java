@@ -17,5 +17,20 @@ public class Reportage extends Programme {
    
     private String theme;
     private static final Logger logger = LoggerFactory.getLogger(Reportage.class);
+    public Reportage(int heure, int duree, String nom){
+        this.type="Reportage";
+        this.heure=heure;
+        this.duree=duree;
+        this.nom=nom;
+    }
+    public String getTheme()
+    {
+        return theme;
+    }
+    public void setTheme(String theme)
+    {
+        this.theme=theme;
+    }
+    public int getDebut(){return heure;}
     
 }
