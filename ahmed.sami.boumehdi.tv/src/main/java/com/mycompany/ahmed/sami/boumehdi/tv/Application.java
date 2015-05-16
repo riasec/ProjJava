@@ -22,5 +22,15 @@ public class Application
         programmeList.add("reportage, 0, 1, test, culturel");
         logger.info("La liste de programmes a tester a ete creee");
         
+        /********************************************************************
+                            AFFICHAGE DE L'ARRAYLIST A TESTER
+        *********************************************************************/
+        
+        System.out.println("A tester :");
+        for(String s : programmeList)
+        {
+            logger.trace("Passage dans la boucle d'affichage");
+            System.out.println(s);
+        }
     }
 }
