@@ -85,4 +85,40 @@ public class Fiction extends Programme {
         logger.info("L'objet fiction correspondant au programme {} a ete creee. Sortie de la methode creationObjet.",element);
         return tmp;
     }
+    public Boolean verif(){
+        logger.info("Entree dans la methode verif()");
+        Boolean test=false;
+        
+        int variableDeCalcul;
+        variableDeCalcul=this.duree+this.heure-1;
+        logger.info("Verification : la fiction est-elle une rediffusion?");
+        if(false == getRediffusion()) //si la fiction n'est pas une rediffusion 
+            {
+            logger.info("Non. Alors on verifie si les heures de programmation sont correctes");
+                if(this.heure != 21) //alors si le début n'est pas à 21h
+                {
+                    logger.info("L'heure est incorrecte.");
+                    System.out.println("Mauvaise heure pour la fiction : " + this.nom);
+                }
+                else{
+                    for(int b = variableDeCalcul; b>=this.heure; b--)
+                    {
+                        logger.info("L'heure est correcte. On renvoie <true>");
+                        test=true;
+                    }
+                }
+            }
+        if(true == getRediffusion())//si rediff : ok tout le temps
+        {
+            logger.info("Oui.");
+            for(int b = variableDeCalcul; b>=this.heure; b--)
+                {
+                    logger.info("On renvoie <true>");
+                    test=true;
+                }
+        }
+        
+        logger.info("Sortie de la methode verif()");
+        return test;
+    }
 }
