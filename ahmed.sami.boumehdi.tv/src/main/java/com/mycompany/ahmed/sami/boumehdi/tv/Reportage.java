@@ -30,10 +30,6 @@ public class Reportage extends Programme {
     {
         this.theme=theme;
     }
-    public int getDebut()
-    {
-        return heure;
-    }
     public static Reportage creationObjet(String element)
     {
         logger.info("On entre dans la methode creationObjet");
